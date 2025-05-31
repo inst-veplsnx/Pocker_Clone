@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правила игры - Poker Royale</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .rules-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(13, 46, 78, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+    
+    .rules-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00eeff;
+      text-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+    }
+    
+    .rule-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: rgba(10, 25, 41, 0.6);
+      border-radius: 15px;
+      border-left: 4px solid #00eeff;
+    }
+    
+    .rule-title {
+      color: #00eeff;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .rule-content {
+      line-height: 1.6;
+    }
+    
+    .hand-examples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      justify-items: center;
+    }
+    
+    .hand-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      padding: 10px;
+      background: rgba(10, 25, 41, 0.5);
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    .hand-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .hand-card .card {
+      width: 50px;
+      height: 70px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    
+    .back-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #0d2e4e, #1a508b);
+      border: 2px solid #00eeff;
+      border-radius: 50px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+      width: fit-content;
+    }
+    
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-cards"></div>
+  <div class="container">
+    <div class="rules-container">
+      <h2 class="rules-title">♠️ ПРАВИЛА ТЕХАССКОГО ХОЛДЕМА ♣️</h2>
+      
+      <div class="rule-section">
+        <h3 class="rule-title">Основы игры</h3>
+        <div class="rule-content">
+          <p>Техасский Холдем - самая популярная разновидность покера. Цель игры - собрать лучшую комбинацию из 5 карт, используя 2 свои карты и 5 общих карт на столе.</p>
+          <p>Игра состоит из четырех раундов ставок:</p>
+          <ol>
+            <li><strong>Префлоп</strong> - после раздачи двух карт каждому игроку</li>
+            <li><strong>Флоп</strong> - после выкладывания первых трех общих карт</li>
+            <li><strong>Терн</strong> - после четвертой общей карты</li>
+            <li><strong>Ривер</strong> - после пятой общей карты</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="rule-section">
+        <h3 class="rule-title">Покерные комбинации</h3>
+        <div class="rule-content">
+          <p>Комбинации ранжируются от сильнейшей к слабейшей:</p>
+          
+          <div class="hand-examples">
+            <div class="hand-card">
+              <div class="hand-cards">
+                <div class="card" style="background-image: url('assets/cards/spades/ace.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/spades/king.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/spades/queen.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/spades/jack.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/spades/10.png')"></div>
+              </div>
+              <p>1. Роял-флэш</p>
+            </div>
+            
+            <div class="hand-card">
+              <div class="hand-cards">
+                <div class="card" style="background-image: url('assets/cards/hearts/9.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/hearts/10.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/hearts/jack.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/hearts/queen.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/hearts/king.png')"></div>
+              </div>
+              <p>2. Стрит-флэш</p>
+            </div>
+            
+            <div class="hand-card">
+              <div class="hand-cards">
+                <div class="card" style="background-image: url('assets/cards/diamonds/ace.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/diamonds/ace.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/clubs/ace.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/spades/ace.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/hearts/king.png')"></div>
+              </div>
+              <p>3. Каре</p>
+            </div>
+            
+            <div class="hand-card">
+              <div class="hand-cards">
+                <div class="card" style="background-image: url('assets/cards/diamonds/king.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/hearts/king.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/spades/king.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/clubs/queen.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/diamonds/queen.png')"></div>
+              </div>
+              <p>4. Фулл-хаус</p>
+            </div>
+            
+            <div class="hand-card">
+              <div class="hand-cards">
+                <div class="card" style="background-image: url('assets/cards/clubs/2.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/clubs/5.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/clubs/7.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/clubs/10.png')"></div>
+                <div class="card" style="background-image: url('assets/cards/clubs/ace.png')"></div>
+              </div>
+              <p>5. Флэш</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="rule-section">
+        <h3 class="rule-title">Действия игрока</h3>
+        <div class="rule-content">
+          <ul>
+            <li><strong>Fold (Сбросить)</strong> - выйти из раздачи, потеряв поставленные фишки</li>
+            <li><strong>Check (Проверить)</strong> - пропустить ход, если ставка не сделана</li>
+            <li><strong>Call (Уравнять)</strong> - уравнять текущую ставку</li>
+            <li><strong>Raise (Повысить)</strong> - повысить текущую ставку</li>
+            <li><strong>All-in (Ва-банк)</strong> - поставить все свои фишки</li>
+          </ul>
+        </div>
+      </div>
+      
+      <button class="back-btn" onclick="window.location.href='index.html'">← НАЗАД К ИГРЕ</button>
+    </div>
+  </div>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

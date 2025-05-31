@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лобби - Poker Royale</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lobby.css">
+</head>
+<body>
+  <div class="lobby-container">
+    <div class="lobby-header">
+      <div class="room-info">
+        <h2>КОМНАТА: <span id="roomId">XXXXXX</span></h2>
+        <button id="copyBtn">📋 Копировать ссылку</button>
+      </div>
+      <div class="player-count">
+        <span>Игроков: <span id="playersCount">1</span>/6</span>
+      </div>
+    </div>
+    
+    <div class="players-grid" id="playersList">
+      <div class="player-card">
+        <div class="player-avatar">👤</div>
+        <div class="player-name">Вы</div>
+        <div class="player-status">Готов</div>
+      </div>
+    </div>
+    
+    <div class="lobby-controls">
+      <button id="startBtn" class="btn glow" disabled>ОЖИДАНИЕ ИГРОКОВ...</button>
+      <button id="addBotBtn" class="btn">🤖 + ДОБАВИТЬ БОТА</button>
+    </div>
+    
+    <div class="chat-container">
+      <div class="chat-messages" id="chatMessages">
+        <div class="message system">Добро пожаловать в лобби! Пригласите друзей по ссылке комнаты.</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Написать сообщение...">
+        <button id="sendBtn">➤</button>
+      </div>
+    </div>
+  </div>
+  
+  <audio id="soundEffect" src="assets/sounds/chip.wav"></audio>
+  <script src="js/utils.js"></script>
+  <script src="js/lobby.js"></script>
+</body>
+</html>
